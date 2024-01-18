@@ -9,7 +9,7 @@
     ],
     "require" : {
         "php" : "~8.0",
-        "magento/framework": "*"
+        "predis/predis": "*"
     },
     "autoload" : {
         "files" : [
