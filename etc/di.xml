@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Predis\ClientInterface" type="Predis\Client" />
+    <virtualType name="RedisClient" type="Predis\Client">
+        <arguments>
+            <argument name="parameters" xsi:type="string">tcp://redis:6379</argument>
+        </arguments>
+    </virtualType>
+    <type name="Vlad\Test\Console\Command\CreateIndexCommand">
+        <arguments>
+            <argument name="client" xsi:type="object">RedisClient</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="index:create" xsi:type="object">Vlad\Test\Console\Command\CreateIndexCommand</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
