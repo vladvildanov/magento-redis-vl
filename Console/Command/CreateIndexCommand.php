@@ -2,11 +2,11 @@
 
 namespace Vlad\Test\Console\Command;
 
-use Magento\Catalog\Model\ResourceModel\Product\Collection;
 use Predis\ClientInterface;
 use Predis\Command\Argument\Search\CreateArguments;
 use Predis\Command\Argument\Search\SchemaFields\NumericField;
 use Predis\Command\Argument\Search\SchemaFields\TextField;
+use Predis\Command\Argument\Search\SchemaFields\VectorField;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -31,15 +31,19 @@ class CreateIndexCommand extends Command
         $this->client->flushdb();
 
         $arguments = (new CreateArguments())
-            ->on('JSON');
+            ->on('JSON')
+            ->prefix(['product:']);
 
         $schema = [
-            new NumericField('id', '', TextField::SORTABLE),
-            new TextField('name', '', TextField::SORTABLE),
-            new TextField('description', '', TextField::SORTABLE)
+            new NumericField('$.id'),
+            new TextField('$.name'),
+            new TextField('$.description'),
+            new VectorField('$.description_embeddings', 'FLAT', [
+                'TYPE', 'FLOAT32', 'DIM', 1024, 'DISTANCE_METRIC', 'COSINE',
+            ]),
         ];
 
-        $response = $this->client->ftcreate('products', $schema, $arguments);
+        $response = $this->client->ftcreate('product', $schema, $arguments);
 
         if ('OK' == $response) {
             $exitCode = 0;

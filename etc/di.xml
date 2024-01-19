@@ -11,10 +11,16 @@
             <argument name="client" xsi:type="object">RedisClient</argument>
         </arguments>
     </type>
+    <type name="Vlad\Test\Console\Command\ImportCommand">
+        <arguments>
+            <argument name="client" xsi:type="object">RedisClient</argument>
+        </arguments>
+    </type>
     <type name="Magento\Framework\Console\CommandListInterface">
         <arguments>
             <argument name="commands" xsi:type="array">
                 <item name="index:create" xsi:type="object">Vlad\Test\Console\Command\CreateIndexCommand</item>
+                <item name="index:import" xsi:type="object">Vlad\Test\Console\Command\ImportCommand</item>
             </argument>
         </arguments>
     </type>
