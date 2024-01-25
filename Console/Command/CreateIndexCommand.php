@@ -39,8 +39,8 @@ class CreateIndexCommand extends Command
             new TextField('$.name'),
             new TextField('$.description'),
             new VectorField('$.description_embeddings', 'FLAT', [
-                'TYPE', 'FLOAT32', 'DIM', 1024, 'DISTANCE_METRIC', 'COSINE',
-            ]),
+                'TYPE', 'FLOAT32', 'DIM', 1536, 'DISTANCE_METRIC', 'COSINE',
+            ], 'vector'),
         ];
 
         $response = $this->client->ftcreate('product', $schema, $arguments);
