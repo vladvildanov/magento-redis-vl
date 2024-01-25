@@ -16,6 +16,11 @@
             <argument name="client" xsi:type="object">RedisClient</argument>
         </arguments>
     </type>
+    <type name="Vlad\Test\Controller\Adminhtml\Test\Index">
+        <arguments>
+            <argument name="client" xsi:type="object">RedisClient</argument>
+        </arguments>
+    </type>
     <type name="Magento\Framework\Console\CommandListInterface">
         <arguments>
             <argument name="commands" xsi:type="array">

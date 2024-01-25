@@ -31,11 +31,11 @@ class ImportCommand extends Command
 
         foreach ($collection as $product) {
             $requestData = [
-                'model' => 'mistral-embed',
+                'model' => 'text-embedding-ada-002',
                 'input' => $product->getDescription(),
             ];
 
-            $response = $httpClient->post('https://api.mistral.ai/v1/embeddings', [
+            $response = $httpClient->post('https://api.openai.com/v1/embeddings', [
                 'headers' => [
                     'Authorization' => 'Bearer ' . getenv('LLM_API_TOKEN'),
                     'Content-Type' => 'application/json',
