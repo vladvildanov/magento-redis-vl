@@ -6,12 +6,12 @@
             <argument name="parameters" xsi:type="string">tcp://redis:6379</argument>
         </arguments>
     </virtualType>
-    <type name="Vlad\Test\Console\Command\CreateIndexCommand">
+    <type name="Vladvildanov\MagentoRedisVl\Console\Command\CreateIndexCommand">
         <arguments>
             <argument name="client" xsi:type="object">RedisClient</argument>
         </arguments>
     </type>
-    <type name="Vlad\Test\Console\Command\ImportCommand">
+    <type name="Vladvildanov\MagentoRedisVl\Console\Command\ImportCommand">
         <arguments>
             <argument name="client" xsi:type="object">RedisClient</argument>
         </arguments>
@@ -19,8 +19,8 @@
     <type name="Magento\Framework\Console\CommandListInterface">
         <arguments>
             <argument name="commands" xsi:type="array">
-                <item name="index:create" xsi:type="object">Vlad\Test\Console\Command\CreateIndexCommand</item>
-                <item name="index:import" xsi:type="object">Vlad\Test\Console\Command\ImportCommand</item>
+                <item name="index:create" xsi:type="object">Vladvildanov\MagentoRedisVl\Console\Command\CreateIndexCommand</item>
+                <item name="index:import" xsi:type="object">Vladvildanov\MagentoRedisVl\Console\Command\ImportCommand</item>
             </argument>
         </arguments>
     </type>

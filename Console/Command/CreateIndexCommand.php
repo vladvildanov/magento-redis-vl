@@ -1,6 +1,6 @@
 <?php
 
-namespace Vlad\Test\Console\Command;
+namespace Vladvildanov\MagentoRedisVl\Console\Command;
 
 use Predis\ClientInterface;
 use Predis\Command\Argument\Search\CreateArguments;

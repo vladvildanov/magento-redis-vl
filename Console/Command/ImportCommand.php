@@ -1,6 +1,6 @@
 <?php
 
-namespace Vlad\Test\Console\Command;
+namespace Vladvildanov\MagentoRedisVl\Console\Command;
 
 use GuzzleHttp\Client;
 use Magento\Catalog\Model\ResourceModel\Product\Collection;

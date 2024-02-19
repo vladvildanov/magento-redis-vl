@@ -2,6 +2,6 @@
 
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'Vlad_Test',
+    'Vladvildanov_MagentoRedisVl',
     __DIR__
 );
