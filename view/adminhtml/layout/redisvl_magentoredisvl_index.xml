@@ -7,7 +7,7 @@
     </head>
     <body>
         <referenceContainer name="content">
-            <block template="Vlad_Test::templatename.phtml"/>
+            <block template="Vladvildanov_MagentoRedisVl::templatename.phtml"/>
         </referenceContainer>
     </body>
 </page>

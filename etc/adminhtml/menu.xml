@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
-        <add id="Vlad_Test::title" title="Menu Title" translate="title" module="Vlad_Test" parent="Magento_Backend::content" sortOrder="50" resource="Vlad_Test::title"/>
-        <add id="Vlad_Test::title_moduletitle" title="Module Title" translate="title" module="Vlad_Test" parent="Vlad_Test::title" sortOrder="10" action="test/test" resource="Vlad_Test::title_moduletitle"/>
+        <add id="Vladvildanov_MagentoRedisVl::title" title="Menu Title" translate="title" module="Vladvildanov_MagentoRedisVl" parent="Magento_Backend::content" sortOrder="50" resource="Vladvildanov_MagentoRedisVl::title"/>
+        <add id="Vladvildanov_MagentoRedisVl::title_moduletitle" title="Module Title" translate="title" module="Vladvildanov_MagentoRedisVl" parent="Vladvildanov_MagentoRedisVl::title" sortOrder="10" action="redisvl/magentoredisvl" resource="Vladvildanov_MagentoRedisVl::title_moduletitle"/>
     </menu>
 </config>
