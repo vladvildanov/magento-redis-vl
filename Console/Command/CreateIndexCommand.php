@@ -2,19 +2,16 @@
 
 namespace Vladvildanov\MagentoRedisVl\Console\Command;
 
-use Predis\ClientInterface;
-use Predis\Command\Argument\Search\CreateArguments;
-use Predis\Command\Argument\Search\SchemaFields\NumericField;
-use Predis\Command\Argument\Search\SchemaFields\TextField;
-use Predis\Command\Argument\Search\SchemaFields\VectorField;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Vladvildanov\MagentoRedisVl\Model\Indexer\IndexFactoryInterface;
 
 class CreateIndexCommand extends Command
 {
-    public function __construct(private ClientInterface $client)
-    {
+    public function __construct(
+        private IndexFactoryInterface $indexFactory
+    ) {
         parent::__construct();
     }
 
@@ -28,32 +25,14 @@ class CreateIndexCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $this->client->flushdb();
+        $index = $this->indexFactory->create();
 
-        $arguments = (new CreateArguments())
-            ->on('JSON')
-            ->prefix(['product:']);
-
-        $schema = [
-            new NumericField('$.id'),
-            new TextField('$.name'),
-            new TextField('$.description'),
-            new VectorField('$.description_embeddings', 'FLAT', [
-                'TYPE', 'FLOAT32', 'DIM', 1024, 'DISTANCE_METRIC', 'COSINE',
-            ]),
-        ];
-
-        $response = $this->client->ftcreate('product', $schema, $arguments);
-
-        if ('OK' == $response) {
-            $exitCode = 0;
-            $message = "Index was successfully created\n";
-        } else {
-            $exitCode = 1;
-            $message = "Error on index creation: $response\n";
+        if ($index->create(true)) {
+            echo "Index successfully created\n";
+            return 0;
         }
 
-        echo $message;
-        return $exitCode;
+        echo "Error during index creation\n";
+        return 1;
     }
 }

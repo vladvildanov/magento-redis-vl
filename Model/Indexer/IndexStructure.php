@@ -2,8 +2,9 @@
 
 namespace Vladvildanov\MagentoRedisVl\Model\Indexer;
 
+use Exception;
 use Magento\Framework\Indexer\IndexStructureInterface;
-use Vladvildanov\PredisVl\Index\IndexInterface;
+use RedisVentures\RedisVl\Index\IndexInterface;
 use Magento\Framework\App\DeploymentConfig;
 
 class IndexStructure implements IndexStructureInterface
@@ -53,6 +54,7 @@ class IndexStructure implements IndexStructureInterface
     }
 
     /**
+     * @param array $schema
      * @return IndexInterface
      */
     private function getIndex(array $schema): IndexInterface

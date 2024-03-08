@@ -49,4 +49,12 @@ class Engine implements EngineInterface
     {
         return $index;
     }
+
+    /**
+     * @inheritDoc
+     */
+    public function isAvailable(): bool
+    {
+        return true;
+    }
 }

@@ -2,22 +2,23 @@
 
 namespace Vladvildanov\MagentoRedisVl\Model\Indexer;
 
+use Magento\Framework\App\DeploymentConfig;
 use Predis\ClientInterface;
-use Vladvildanov\PredisVl\FactoryInterface;
-use Vladvildanov\PredisVl\Index\IndexInterface;
-use Vladvildanov\PredisVl\Index\SearchIndex;
+use RedisVentures\RedisVl\FactoryInterface;
+use RedisVentures\RedisVl\Index\IndexInterface;
+use RedisVentures\RedisVl\Index\SearchIndex;
 
 class IndexFactory implements IndexFactoryInterface
 {
-    public function __construct(private ClientInterface $client)
+    public function __construct(private ClientInterface $client, private DeploymentConfig $config)
     {
     }
 
     /**
      * @inheritDoc
      */
-    public function create(array $schema, FactoryInterface $factory = null): IndexInterface
+    public function create(FactoryInterface $factory = null): IndexInterface
     {
-        return new SearchIndex($this->client, $schema, $factory);
+        return new SearchIndex($this->client, $this->config->get('search_index/schema'), $factory);
     }
 }
