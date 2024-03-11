@@ -11,9 +11,9 @@ use PHPUnit\Framework\TestCase;
 use RedisVentures\RedisVl\Index\IndexInterface;
 use RedisVentures\RedisVl\VectorHelper;
 use RedisVentures\RedisVl\Vectorizer\VectorizerInterface;
-use Vladvildanov\MagentoRedisVl\src\Model\Indexer\IndexerHandler;
-use Vladvildanov\MagentoRedisVl\src\Model\Indexer\IndexFactory;
-use Vladvildanov\MagentoRedisVl\src\Vectorizer\VectorizerFactory;
+use Vladvildanov\MagentoRedisVl\Model\Indexer\IndexerHandler;
+use Vladvildanov\MagentoRedisVl\Model\Indexer\IndexFactory;
+use Vladvildanov\MagentoRedisVl\Vectorizer\VectorizerFactory;
 
 class IndexerHandlerTest extends TestCase
 {
