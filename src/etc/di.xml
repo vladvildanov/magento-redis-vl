@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Predis\ClientInterface" type="Predis\Client" />
+    <preference for="Vladvildanov\MagentoRedisVl\Model\Indexer\IndexFactoryInterface"
+                type="Vladvildanov\MagentoRedisVl\Model\Indexer\IndexFactory" />
+    <virtualType name="RedisClient" type="Predis\Client">
+        <arguments>
+            <argument name="parameters" xsi:type="string">tcp://redis:6379</argument>
+        </arguments>
+    </virtualType>
+    <type name="Vladvildanov\MagentoRedisVl\Model\Indexer\IndexFactory">
+        <arguments>
+            <argument name="client" xsi:type="object">RedisClient</argument>
+        </arguments>
+    </type>
+    <type name="Vladvildanov\MagentoRedisVl\Console\Command\CreateIndexCommand">
+        <arguments>
+            <argument name="indexFactory" xsi:type="object">Vladvildanov\MagentoRedisVl\Model\Indexer\IndexFactory</argument>
+        </arguments>
+    </type>
+    <type name="Vladvildanov\MagentoRedisVl\Console\Command\ImportCommand">
+        <arguments>
+            <argument name="client" xsi:type="object">RedisClient</argument>
+        </arguments>
+    </type>
+    <type name="Vladvildanov\MagentoRedisVl\Model\Indexer\IndexerHandler">
+        <arguments>
+            <argument name="productCollection" xsi:type="object">Magento\Catalog\Model\ResourceModel\Product\Collection</argument>
+            <argument name="config" xsi:type="object">Magento\Framework\App\DeploymentConfig</argument>
+        </arguments>
+    </type>
+    <type name="Vladvildanov\MagentoRedisVl\Vectorizer\VectorizerFactory">
+        <arguments>
+            <argument name="factory" xsi:type="object">RedisVentures\RedisVl\Vectorizer\Factory</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="index:create" xsi:type="object">Vladvildanov\MagentoRedisVl\Console\Command\CreateIndexCommand</item>
+                <item name="index:import" xsi:type="object">Vladvildanov\MagentoRedisVl\Console\Command\ImportCommand</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Search\Model\Adminhtml\System\Config\Source\Engine">
+        <arguments>
+            <argument name="engines" xsi:type="array">
+                <item name="redis" xsi:type="string">Redis</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\CatalogSearch\Model\Indexer\IndexStructureFactory">
+        <arguments>
+            <argument name="structures" xsi:type="array">
+                <item name="redis" xsi:type="string">Vladvildanov\MagentoRedisVl\Model\Indexer\IndexStructure</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Search\Model\EngineResolver">
+        <arguments>
+            <argument name="engines" xsi:type="array">
+                <item name="redis" xsi:type="string">redis</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\CatalogSearch\Model\ResourceModel\EngineProvider">
+        <arguments>
+            <argument name="engines" xsi:type="array">
+                <item name="redis" xsi:type="string">Vladvildanov\MagentoRedisVl\Model\ResourceModel\Engine</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\CatalogSearch\Model\Indexer\IndexerHandlerFactory">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="redis" xsi:type="string">Vladvildanov\MagentoRedisVl\Model\Indexer\IndexerHandler</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
