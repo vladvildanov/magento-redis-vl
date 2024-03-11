@@ -24,7 +24,7 @@
     },
     "autoload" : {
         "files" : [
-            "registration.php"
+            "src/registration.php"
         ],
         "psr-4" : {
             "Vladvildanov\\MagentoRedisVl\\" : "src/"
