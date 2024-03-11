@@ -1,6 +1,6 @@
 <?php
 
-namespace Vladvildanov\MagentoRedisVl\Model\Indexer;
+namespace Vladvildanov\MagentoRedisVl\src\Model\Indexer;
 
 use RedisVentures\RedisVl\FactoryInterface;
 use RedisVentures\RedisVl\Index\IndexInterface;

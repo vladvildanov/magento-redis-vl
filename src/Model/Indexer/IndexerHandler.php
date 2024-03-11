@@ -1,17 +1,17 @@
 <?php
 
-namespace Vladvildanov\MagentoRedisVl\Model\Indexer;
+namespace Vladvildanov\MagentoRedisVl\src\Model\Indexer;
 
 use Magento\Catalog\Model\ResourceModel\Product\Collection;
 use Magento\Framework\App\DeploymentConfig;
 use Magento\Framework\Exception\FileSystemException;
 use Magento\Framework\Exception\RuntimeException;
-use Magento\Framework\Indexer\SaveHandler\IndexerInterface;
 use Magento\Framework\Indexer\SaveHandler\Batch;
-use RedisVentures\RedisVl\VectorHelper;
-use Vladvildanov\MagentoRedisVl\Vectorizer\VectorizerFactory;
+use Magento\Framework\Indexer\SaveHandler\IndexerInterface;
 use RedisVentures\RedisVl\Index\IndexInterface;
+use RedisVentures\RedisVl\VectorHelper;
 use RedisVentures\RedisVl\Vectorizer\VectorizerInterface;
+use Vladvildanov\MagentoRedisVl\src\Vectorizer\VectorizerFactory;
 
 class IndexerHandler implements IndexerInterface
 {

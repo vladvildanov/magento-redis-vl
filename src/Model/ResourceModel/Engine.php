@@ -1,10 +1,10 @@
 <?php
 
-namespace Vladvildanov\MagentoRedisVl\Model\ResourceModel;
+namespace Vladvildanov\MagentoRedisVl\src\Model\ResourceModel;
 
 use Magento\Catalog\Model\Product\Visibility;
-use Magento\Framework\Indexer\ScopeResolver\IndexScopeResolver;
 use Magento\CatalogSearch\Model\ResourceModel\EngineInterface;
+use Magento\Framework\Indexer\ScopeResolver\IndexScopeResolver;
 
 class Engine implements EngineInterface
 {

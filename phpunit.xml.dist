@@ -8,7 +8,7 @@
 >
     <testsuites>
         <testsuite name="Unit">
-            <directory>Test/Unit/</directory>
+            <directory>tests/Unit/</directory>
         </testsuite>
     </testsuites>
 
@@ -20,25 +20,13 @@
 
     <filter>
         <whitelist>
-            <directory suffix=".php">./</directory>
+            <directory suffix=".php">./src</directory>
         </whitelist>
-        <exclude>
-            <directory>./Test/</directory>
-            <directory>./vendor/</directory>
-        </exclude>
     </filter>
 
     <coverage>
         <report>
             <clover outputFile="build/logs/clover.xml"/>
         </report>
-        <include>
-            <directory suffix=".php">./</directory>
-        </include>
-        <exclude>
-            <directory>./Test/</directory>
-            <directory>./vendor/</directory>
-            <directory>./.github/</directory>
-        </exclude>
     </coverage>
 </phpunit>

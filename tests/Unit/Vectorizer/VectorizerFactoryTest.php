@@ -4,9 +4,9 @@ namespace Vladvildanov\MagentoRedisVl\Unit\Vectorizer;
 
 use Magento\Framework\App\DeploymentConfig;
 use PHPUnit\Framework\TestCase;
-use Vladvildanov\MagentoRedisVl\Vectorizer\VectorizerFactory;
 use RedisVentures\RedisVl\Vectorizer\FactoryInterface;
 use RedisVentures\RedisVl\Vectorizer\VectorizerInterface;
+use Vladvildanov\MagentoRedisVl\src\Vectorizer\VectorizerFactory;
 
 class VectorizerFactoryTest extends TestCase
 {

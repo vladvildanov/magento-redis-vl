@@ -1,6 +1,6 @@
 <?php
 
-namespace Vladvildanov\MagentoRedisVl\Vectorizer;
+namespace Vladvildanov\MagentoRedisVl\src\Vectorizer;
 
 use Magento\Framework\App\DeploymentConfig;
 use Magento\Framework\Exception\FileSystemException;
