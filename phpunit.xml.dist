@@ -32,5 +32,13 @@
         <report>
             <clover outputFile="build/logs/clover.xml"/>
         </report>
+        <include>
+            <directory suffix=".php">./</directory>
+        </include>
+        <exclude>
+            <directory>./Test/</directory>
+            <directory>./vendor/</directory>
+            <directory>./.github/</directory>
+        </exclude>
     </coverage>
 </phpunit>
