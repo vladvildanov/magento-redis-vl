@@ -35,11 +35,6 @@
             "Vladvildanov\\MagentoRedisVl\\" : "tests/"
         }
     },
-    "autoload-dev": {
-        "psr-4": {
-            "Vladvildanov\\MagentoRedisVl\\" : "Test/"
-        }
-    },
     "config": {
         "allow-plugins": {
             "magento/magento-composer-installer": true,
