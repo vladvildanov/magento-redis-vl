@@ -38,7 +38,6 @@
         <arguments>
             <argument name="commands" xsi:type="array">
                 <item name="index:create" xsi:type="object">Vladvildanov\MagentoRedisVl\Console\Command\CreateIndexCommand</item>
-                <item name="index:import" xsi:type="object">Vladvildanov\MagentoRedisVl\Console\Command\ImportCommand</item>
             </argument>
         </arguments>
     </type>
