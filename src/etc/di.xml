@@ -88,4 +88,11 @@
             <argument name="indexFactory" xsi:type="object">Vladvildanov\MagentoRedisVl\Model\Indexer\IndexFactory</argument>
         </arguments>
     </type>
+    <type name="Magento\CatalogSearch\Model\Search\ItemCollectionProvider">
+        <arguments>
+            <argument name="factories" xsi:type="array">
+                <item name="redis" xsi:type="object">Magento\CatalogSearch\Model\ResourceModel\Advanced\Collection</item>
+            </argument>
+        </arguments>
+    </type>
 </config>
