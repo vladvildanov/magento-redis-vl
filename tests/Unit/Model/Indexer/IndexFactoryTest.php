@@ -6,7 +6,7 @@ use Magento\Framework\App\DeploymentConfig;
 use PHPUnit\Framework\TestCase;
 use Predis\Client;
 use RedisVentures\RedisVl\Index\SearchIndex;
-use Vladvildanov\MagentoRedisVl\src\Model\Indexer\IndexFactory;
+use Vladvildanov\MagentoRedisVl\Model\Indexer\IndexFactory;
 
 class IndexFactoryTest extends TestCase
 {
