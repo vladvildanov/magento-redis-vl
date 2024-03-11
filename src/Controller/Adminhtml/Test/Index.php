@@ -1,6 +1,6 @@
 <?php
 
-namespace Vladvildanov\MagentoRedisVl\src\Controller\Adminhtml\Test;
+namespace Vladvildanov\MagentoRedisVl\Controller\Adminhtml\Test;
 
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;

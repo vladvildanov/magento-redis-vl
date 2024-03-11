@@ -1,6 +1,6 @@
 <?php
 
-namespace Vladvildanov\MagentoRedisVl\src\Model\ResourceModel;
+namespace Vladvildanov\MagentoRedisVl\Model\ResourceModel;
 
 use Magento\Catalog\Model\Product\Visibility;
 use Magento\CatalogSearch\Model\ResourceModel\EngineInterface;
