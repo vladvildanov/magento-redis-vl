@@ -7,8 +7,16 @@
         "OSL-3.0",
         "AFL-3.0"
     ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://repo.magento.com/"
+        }
+    ],
     "require" : {
         "php" : "~8.1",
+        "magento/framework": "^103.0.0",
+        "magento/module-catalog": "*",
         "redis-ventures/redisvl": "^0.2"
     },
     "require-dev": {
@@ -29,7 +37,8 @@
     },
     "config": {
         "allow-plugins": {
-            "magento/magento-composer-installer": true
+            "magento/magento-composer-installer": true,
+            "magento/composer-dependency-version-audit-plugin": true
         }
     }
 }

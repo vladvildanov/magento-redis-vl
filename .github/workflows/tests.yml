@@ -26,6 +26,10 @@ jobs:
           php-version: '8.1'
           coverage: xdebug
 
+      - name: Provide Magento2 repo credentials
+        run: |
+          composer config -g http-basic.repo.magento.com "${{ secrets.MAGENTO_USERNAME }}" "${{ secrets.MAGENTO_PASSWORD }}"
+
       - name: Install Composer dependencies
         uses: ramsey/composer-install@v2
         with:
