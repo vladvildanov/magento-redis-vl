@@ -22,7 +22,12 @@
             "registration.php"
         ],
         "psr-4" : {
-            "Vladvildanov\\MagentoRedisVl\\" : ""
+            "Vladvildanov\\MagentoRedisVl\\" : "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Vladvildanov\\MagentoRedisVl\\" : "tests/"
         }
     },
     "config": {
