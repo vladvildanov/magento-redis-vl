@@ -97,7 +97,7 @@
     </type>
     <type type="Magento\CatalogSearch\Model\ResourceModel\Fulltext\SearchCollectionFactory">
         <arguments>
-            <argument name="instanceName" xsi:type="string">Magento\CatalogSearch\Model\Search\ItemCollectionProvider</argument>
+            <argument name="instanceName" xsi:type="object">Magento\CatalogSearch\Model\Search\ItemCollectionProvider</argument>
         </arguments>
     </type>
 </config>
