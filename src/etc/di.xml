@@ -76,4 +76,16 @@
             </argument>
         </arguments>
     </type>
+    <type name="Magento\Search\Model\AdapterFactory">
+        <arguments>
+            <argument name="adapters" xsi:type="array">
+                <item name="redis" xsi:type="string">Vladvildanov\MagentoRedisVl\SearchAdapter\Adapter</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Vladvildanov\MagentoRedisVl\SearchAdapter\Adapter">
+        <arguments>
+            <argument name="indexFactory" xsi:type="object">Vladvildanov\MagentoRedisVl\Model\Indexer\IndexFactory</argument>
+        </arguments>
+    </type>
 </config>
