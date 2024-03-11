@@ -20,8 +20,12 @@
 
     <filter>
         <whitelist>
-            <directory suffix=".php">/</directory>
+            <directory suffix=".php">./</directory>
         </whitelist>
+        <exclude>
+            <directory>./Test/</directory>
+            <directory>./vendor/</directory>
+        </exclude>
     </filter>
 
     <coverage>
