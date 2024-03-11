@@ -91,7 +91,7 @@
     <type name="Magento\CatalogSearch\Model\Search\ItemCollectionProvider">
         <arguments>
             <argument name="factories" xsi:type="array">
-                <item name="redis" xsi:type="object">Magento\CatalogSearch\Model\ResourceModel\Advanced\Collection</item>
+                <item name="redis" xsi:type="object">Magento\CatalogSearch\Model\ResourceModel\Advanced\CollectionFactory</item>
             </argument>
         </arguments>
     </type>
