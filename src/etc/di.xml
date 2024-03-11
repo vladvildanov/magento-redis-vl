@@ -88,16 +88,21 @@
             <argument name="indexFactory" xsi:type="object">Vladvildanov\MagentoRedisVl\Model\Indexer\IndexFactory</argument>
         </arguments>
     </type>
+    <type name="Magento\Catalog\Model\Layer\Search">
+        <arguments>
+            <argument name="context" xsi:type="object">Magento\CatalogSearch\Model\Layer\Search\Context</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Catalog\Model\Layer\Category">
+        <arguments>
+            <argument name="context" xsi:type="object">Magento\CatalogSearch\Model\Layer\Category\Context</argument>
+        </arguments>
+    </type>
     <type name="Magento\CatalogSearch\Model\Search\ItemCollectionProvider">
         <arguments>
             <argument name="factories" xsi:type="array">
                 <item name="redis" xsi:type="object">Magento\CatalogSearch\Model\ResourceModel\Advanced\CollectionFactory</item>
             </argument>
-        </arguments>
-    </type>
-    <type type="Magento\CatalogSearch\Model\ResourceModel\Fulltext\SearchCollectionFactory">
-        <arguments>
-            <argument name="instanceName" xsi:type="object">Magento\CatalogSearch\Model\Search\ItemCollectionProvider</argument>
         </arguments>
     </type>
 </config>
