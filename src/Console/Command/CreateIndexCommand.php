@@ -1,11 +1,11 @@
 <?php
 
-namespace Vladvildanov\MagentoRedisVl\src\Console\Command;
+namespace Vladvildanov\MagentoRedisVl\Console\Command;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Vladvildanov\MagentoRedisVl\src\Model\Indexer\IndexFactoryInterface;
+use Vladvildanov\MagentoRedisVl\Model\Indexer\IndexFactoryInterface;
 
 class CreateIndexCommand extends Command
 {

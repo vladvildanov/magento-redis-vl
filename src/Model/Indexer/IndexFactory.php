@@ -1,6 +1,6 @@
 <?php
 
-namespace Vladvildanov\MagentoRedisVl\src\Model\Indexer;
+namespace Vladvildanov\MagentoRedisVl\Model\Indexer;
 
 use Magento\Framework\App\DeploymentConfig;
 use Predis\ClientInterface;

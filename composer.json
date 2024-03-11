@@ -17,6 +17,7 @@
         "php" : "~8.1",
         "magento/framework": "^103.0.0",
         "magento/module-catalog": "*",
+        "magento/module-catalog-search": "*",
         "redis-ventures/redisvl": "^0.2"
     },
     "require-dev": {
@@ -24,7 +25,7 @@
     },
     "autoload" : {
         "files" : [
-            "src/registration.php"
+            "registration.php"
         ],
         "psr-4" : {
             "Vladvildanov\\MagentoRedisVl\\" : "src/"
